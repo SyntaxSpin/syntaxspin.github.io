@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="mdui-theme-dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SyntaxSpin</title>
+  <!-- Filled -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Outlined -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+
+<!-- Rounded -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+
+<!-- Sharp -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+<!-- Two Tone -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <style>
+    :root{
+  --mdui-color-primary: 231 182 241;
+  --mdui-color-surface-tint: 231 182 241;
+  --mdui-color-on-primary: 70 33 81;
+  --mdui-color-primary-container: 94 56 105;
+  --mdui-color-on-primary-container: 251 215 255;
+  --mdui-color-secondary: 213 192 214;
+  --mdui-color-on-secondary: 58 43 61;
+  --mdui-color-secondary-container: 81 65 84;
+  --mdui-color-on-secondary-container: 242 219 243;
+  --mdui-color-tertiary: 245 183 178;
+  --mdui-color-on-tertiary: 76 37 34;
+  --mdui-color-tertiary-container: 102 59 55;
+  --mdui-color-on-tertiary-container: 255 218 215;
+  --mdui-color-error: 255 180 171;
+  --mdui-color-on-error: 105 0 5;
+  --mdui-color-error-container: 147 0 10;
+  --mdui-color-on-error-container: 255 218 214;
+  --mdui-color-background: 22 18 23;
+  --mdui-color-on-background: 234 224 231;
+  --mdui-color-surface: 22 18 23;
+  --mdui-color-on-surface: 234 224 231;
+  --mdui-color-surface-variant: 76 68 76;
+  --mdui-color-on-surface-variant: 207 195 205;
+  --mdui-color-outline: 152 142 151;
+  --mdui-color-outline-variant: 76 68 76;
+  --mdui-color-shadow: 0 0 0;
+  --mdui-color-scrim: 0 0 0;
+  --mdui-color-inverse-surface: 234 224 231;
+  --mdui-color-inverse-on-surface: 52 47 52;
+  --mdui-color-inverse-primary: 120 79 131;
+  --mdui-color-primary-fixed: 251 215 255;
+  --mdui-color-on-primary-fixed: 47 10 59;
+  --mdui-color-primary-fixed-dim: 231 182 241;
+  --mdui-color-on-primary-fixed-variant: 94 56 105;
+  --mdui-color-secondary-fixed: 242 219 243;
+  --mdui-color-on-secondary-fixed: 36 23 39;
+  --mdui-color-secondary-fixed-dim: 213 192 214;
+  --mdui-color-on-secondary-fixed-variant: 81 65 84;
+  --mdui-color-tertiary-fixed: 255 218 215;
+  --mdui-color-on-tertiary-fixed: 51 17 15;
+  --mdui-color-tertiary-fixed-dim: 245 183 178;
+  --mdui-color-on-tertiary-fixed-variant: 102 59 55;
+  --mdui-color-surface-dim: 22 18 23;
+  --mdui-color-surface-bright: 61 55 61;
+  --mdui-color-surface-container-lowest: 17 13 18;
+  --mdui-color-surface-container-low: 31 26 31;
+  --mdui-color-surface-container: 35 30 35;
+  --mdui-color-surface-container-high: 46 40 46;
+  --mdui-color-surface-container-highest: 57 51 57;
+    }
+    body {
+      font-family: 'Outfit', sans-serif;
+      margin: 0;
+      padding: 0;
+      color: white;
+    }
+
+    .containers{
+      
+      border-top: 1px solid #E0E0E0;
+      padding: 22px;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 1024px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+
+    .profile {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 32px;
+      transition: transform 0.3s ease;
+    }
+
+    .profile:hover {
+      transform: translateY(-4px);
+    }
+
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 3px solid rgb(var(--mdui-color-on-surface));
+      transition: border-color 0.3s ease;
+    }
+
+    .profile img:hover {
+      border-color: rgb(var(--mdui-color-primary));
+    }
+
+    .profile h3 {
+      font-size: 1.5rem;
+      
+      margin: 0;
+    }
+
+    .profile p {
+      margin: 4px 0 0;
+      
+      color: gainsboro;
+    }
+
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      
+      margin-bottom: 16px;
+    }
+
+    .skills, .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .skill, .language {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 16px;
+      background: #F3E5F5;
+      border-radius: 50px;
+      transition: background-color 0.3s ease;
+    }
+
+    .skill:hover, .language:hover {
+      background: #E1BEE7;
+    }
+
+    .skill span, .language span {
+      font-size: 1rem;
+      
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    @media (min-width: 768px) {
+      .projects {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .project {
+      padding: 16px;
+      border: 1px solid #E0E0E0;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .project:hover {
+      border-color: rgb(var(--mdui-color-on-primary-container));
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .project h5 {
+      margin: 0 0 8px;
+      font-size: 1.125rem;
+      font-weight: 500;
+     
+    }
+
+    .project p {
+      margin: 0;
+      font-size: 0.875rem;
+  
+    }
+
+    
+    .copyright {
+      text-align: center;
+      margin-top: 16px;
+      font-size: 0.875rem;
+      
+    }
+  </style>
+</head>
+<header>
+	<mdui-top-app-bar style="position: relative; margin-left:9px; margin-right:9px;" >
+  <div style="text-align : center;">
+  <mdui-top-app-bar-title>SyntaxSpin</mdui-top-app-bar-title></div>
+  <div style="flex-grow: 1"></div>
+  <mdui-dropdown>
+  <mdui-button-icon icon="person" slot="trigger"></mdui-button-icon>
+   <mdui-menu>
+    <mdui-menu-item onClick='window.open("https://github.com/syntaxspins/","_blank");'>Github</mdui-menu-item>
+    <mdui-menu-item onClick='window.open("https://instagram.com/syntaxspin","_blank");'>Instagram</mdui-menu-item>
+	  <mdui-menu-item onClick='window.open("https://bsky.app/profile/syntaxspin.bsky.social","_blank");'>Bluesky</mdui-menu-item>
+	   <mdui-menu-item onClick='window.open("https://reddit.com/u/syntaxspin","_blank");'>Reddit</mdui-menu-item>
+  </mdui-menu>
+</mdui-dropdown>
+</mdui-top-app-bar>
+</header>
+<body>
+  <div class="containers">
+  <div class="container">
+    <!-- Developer Profile -->
+    <mdui-card variant="outlined" style=" border: 1px solid; border-radius:40px; padding: 20px;"class="profile">
+      <img src="https://github.com/syntaxspins.png" alt="Developer">
+      <div>
+        <h3>SyntaxSpin</h3>
+        <p>Developer & Designer</p>
+      </div>
+    </mdui-card>
+
+    <!-- Skills Section -->
+    <div>
+      <h4 class="section-title">Skills</h4>
+      <div class="skills">
+        <mdui-chip outlined >Java</mdui-chip>
+	   	<mdui-chip outlined >Kotlin</mdui-chip>
+		   <mdui-chip outlined >CSS3</mdui-chip>
+		   <mdui-chip outlined >HTML5</mdui-chip>
+		 <mdui-chip outlined >JavaScript</mdui-chip>
+		 <mdui-chip outlined >Markdown</mdui-chip>
+		 <mdui-chip outlined >Git</mdui-chip>
+		 <mdui-chip outlined >Batch</mdui-chip>
+       
+      </div>
+    </div>
+
+    <!-- Language Section -->
+    <div>
+      <h4 class="section-title">Languages</h4>
+      <div class="languages">
+	   <mdui-chip outlined >🇹🇳 Arabic </mdui-chip>
+	    <mdui-chip outlined >🇺🇸 English</mdui-chip>
+		 <mdui-chip outlined >🇫🇷 French</mdui-chip>
+		  <mdui-chip outlined >🇪🇸 Spanish</mdui-chip>
+       
+      </div>
+    </div>
+
+    <!-- Projects Section -->
+    <div>
+      <h4 class="section-title">Projects</h4>
+      <div class="projects">
+        <div class="project" onClick='window.open("https://github.com/sparkleddevs/sparkleseditor","_blank");'>
+          <h5>Sparkles Editor</h5>
+          <p>Advanced code editor</p>
+        </div>
+        <div class="project" onClick='window.open("https://github.com/syntaxspins/robok-engine","_blank");'>
+          <h5>Robok Engine (Contributor)</h5>
+          <p>Game development framework</p>
+        </div>
+        <div class="project" onClick='window.open("https://github.com/syntaxspins/ffmpegplayground","_blank");'>
+          <h5>FFmpeg Playground</h5>
+          <p>Media processing toolkit</p>
+        </div>
+        <div class="project" onClick='window.open("https://github.com/syntaxspins/sakura","_blank");'>
+          <h5>Sakura</h5>
+          <p>Jetpack Compose Learner</p>
+        </div>
+      </div>
+    </div>
+
+    
+ 
+ 
+ 
+
+    <!-- Copyright -->
+    <div style="margin-top:49px;" class="copyright">
+      &copy; 2025 SyntaxSpin. All rights reserved. Made by <a herf="https://github.com/nexavo999">Nexavo</a> and adapted by SyntaxSpin
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
