@@ -22,9 +22,9 @@
   
                   <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
          
-   <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
+  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
 <script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
-  <style>
+     <style>
     :root{
 --mdui-color-primary: 255 255 255;
   --mdui-color-surface-tint: 198 198 199;
@@ -77,8 +77,8 @@
   --mdui-color-surface-container-highest: 53 52 52;
     }
        body{
-         font-family: 'Guton', sans-serif;       
-         overflow: hidden;
+         font-family: 'Guton', sans-serif;  
+         overflow :hidden;         
        }
   #smalldesc{
     font-family: 'Guton', sans-serif;       
@@ -135,7 +135,8 @@
     </style>
   </style>
 </head>
-<header>
+  <div style="margin-bottom:15px;"></div>
+<body>
  <div style="position: relative; overflow: hidden; display: flex; flex-direction: column; height: 100vh;">
     <mdui-collapse accordion>
   <mdui-top-app-bar style="backdrop-filter: blur(8px); background-color: rgba(var(--mdui-color-background),0)" scroll-target=".example-scroll-target">
@@ -151,8 +152,8 @@
                  <div style="min-height: 100%; padding: 16px">
                     <!-- Your actual content here -->
                                 
-              
-<body>
+                 
+
   <img src="https://github.com/syntaxspin.png" width="60px" height="60px" style="border-radius:100%;">
  <h1 id="hello" style="margin-top:15px;">
         <span id="greeting" style="margin-bottom : -12px"></span><br>
@@ -198,12 +199,33 @@
 <mdui-button style="background-color :white; color:black; font-family: 'Guton', sans-serif;" variant="filled" onclick="window.open('https://github.com/syntaxspin','_blank');">Github</mdui-button>
 <mdui-button style="color:white; font-family: 'Guton', sans-serif;" variant="text">About me</mdui-button>
   <div style="text-align:center;">
-  <mdui-card style="background-color:rgba(0,0,0,0); text-align:center; margin-top:30px;" variant="outlined" style="width: 300px;height: 300px">
+  <mdui-card style="background-color:rgba(0,0,0,0); border-radius :25px; text-align:center; margin-top:30px;" variant="outlined" style="width: 300px;height: 300px">
     <dotlottie-player src="https://lottie.host/96b7a336-e362-4f86-b283-a0e06cd15cb4/oIQQSCwE4e.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
   </mdui-card></div>
+                   
+ <section id="Languages">
+   <h1>Spoken Languages</h1> 
+   
+   <mdui-chip elevated style="backdrop-filter:blur(9px); background-color:rgba(0,0,0,0.1);">Arabic</mdui-chip>
+   <mdui-chip elevated style="backdrop-filter:blur(9px); background-color:rgba(0,0,0,0.1);">English</mdui-chip>
+ <mdui-chip elevated style="backdrop-filter:blur(9px); background-color:rgba(0,0,0,0.1);">French</mdui-chip>
+ <mdui-chip elevated style="backdrop-filter:blur(9px); background-color:rgba(0,0,0,0.1);">Spanish</mdui-chip>
+   <h2>Programming Languages</h2>
+   <div style="text-align:center;">
+   <mdui-card style="background-color:rgba(0,0,0,0); border-radius :25px; text-align:center; margin-top:30px;" variant="outlined" style="width: 100px;height: 100px">
+     <dotlottie-player
+  src="https://lottie.host/2aa81388-4b6f-4f77-bdcc-18173faec23f/0OQ1XU29GG.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 100px; height: 100px"
+  loop
+  autoplay
+></dotlottie-player>
+     
+   </mdui-card></div>
+ </section>               
 </body>
 </div>
 </div>
                           
-</header>
 </html>
