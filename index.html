@@ -1,305 +1,316 @@
 <!DOCTYPE html>
-<html lang="en" class="mdui-theme-dark">
+
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles/style.css"/>
   <title>SyntaxSpin</title>
-  <!-- Filled -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-<!-- Outlined -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
-
-<!-- Rounded -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
-
-<!-- Sharp -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
-
-<!-- Two Tone -->
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Two+Tone" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://unpkg.com/mdui@2/mdui.css">
-<script src="https://unpkg.com/mdui@2/mdui.global.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.css" rel="stylesheet">
+  <script type="module" src="https://cdn.jsdelivr.net/npm/beercss@3.9.7/dist/cdn/beer.min.js"></script>
+  <script type="module" src="https://cdn.jsdelivr.net/npm/material-dynamic-colors@1.1.2/dist/cdn/material-dynamic-colors.min.js"></script>
+  <link href="https://fonts.cdnfonts.com/css/guton" rel="stylesheet">
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
   <style>
-    :root{
-  --mdui-color-primary: 231 182 241;
-  --mdui-color-surface-tint: 231 182 241;
-  --mdui-color-on-primary: 70 33 81;
-  --mdui-color-primary-container: 94 56 105;
-  --mdui-color-on-primary-container: 251 215 255;
-  --mdui-color-secondary: 213 192 214;
-  --mdui-color-on-secondary: 58 43 61;
-  --mdui-color-secondary-container: 81 65 84;
-  --mdui-color-on-secondary-container: 242 219 243;
-  --mdui-color-tertiary: 245 183 178;
-  --mdui-color-on-tertiary: 76 37 34;
-  --mdui-color-tertiary-container: 102 59 55;
-  --mdui-color-on-tertiary-container: 255 218 215;
-  --mdui-color-error: 255 180 171;
-  --mdui-color-on-error: 105 0 5;
-  --mdui-color-error-container: 147 0 10;
-  --mdui-color-on-error-container: 255 218 214;
-  --mdui-color-background: 22 18 23;
-  --mdui-color-on-background: 234 224 231;
-  --mdui-color-surface: 22 18 23;
-  --mdui-color-on-surface: 234 224 231;
-  --mdui-color-surface-variant: 76 68 76;
-  --mdui-color-on-surface-variant: 207 195 205;
-  --mdui-color-outline: 152 142 151;
-  --mdui-color-outline-variant: 76 68 76;
-  --mdui-color-shadow: 0 0 0;
-  --mdui-color-scrim: 0 0 0;
-  --mdui-color-inverse-surface: 234 224 231;
-  --mdui-color-inverse-on-surface: 52 47 52;
-  --mdui-color-inverse-primary: 120 79 131;
-  --mdui-color-primary-fixed: 251 215 255;
-  --mdui-color-on-primary-fixed: 47 10 59;
-  --mdui-color-primary-fixed-dim: 231 182 241;
-  --mdui-color-on-primary-fixed-variant: 94 56 105;
-  --mdui-color-secondary-fixed: 242 219 243;
-  --mdui-color-on-secondary-fixed: 36 23 39;
-  --mdui-color-secondary-fixed-dim: 213 192 214;
-  --mdui-color-on-secondary-fixed-variant: 81 65 84;
-  --mdui-color-tertiary-fixed: 255 218 215;
-  --mdui-color-on-tertiary-fixed: 51 17 15;
-  --mdui-color-tertiary-fixed-dim: 245 183 178;
-  --mdui-color-on-tertiary-fixed-variant: 102 59 55;
-  --mdui-color-surface-dim: 22 18 23;
-  --mdui-color-surface-bright: 61 55 61;
-  --mdui-color-surface-container-lowest: 17 13 18;
-  --mdui-color-surface-container-low: 31 26 31;
-  --mdui-color-surface-container: 35 30 35;
-  --mdui-color-surface-container-high: 46 40 46;
-  --mdui-color-surface-container-highest: 57 51 57;
-    }
-    body {
-      font-family: 'Outfit', sans-serif;
-      margin: 0;
-      padding: 0;
-      color: white;
-    }
-
-    .containers{
-      
-      border-top: 1px solid #E0E0E0;
-      padding: 22px;
-      overflow: hidden;
-    }
-
-    .container {
-      max-width: 1024px;
-      margin: 0 auto;
-      padding: 16px;
-    }
-
-    .profile {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      margin-bottom: 32px;
-      transition: transform 0.3s ease;
-    }
-
-    .profile:hover {
-      transform: translateY(-4px);
-    }
-
-    .profile img {
-      width: 80px;
-      height: 80px;
-      border-radius: 50%;
-      border: 3px solid rgb(var(--mdui-color-on-surface));
-      transition: border-color 0.3s ease;
-    }
-
-    .profile img:hover {
-      border-color: rgb(var(--mdui-color-primary));
-    }
-
-    .profile h3 {
-      font-size: 1.5rem;
-      
-      margin: 0;
-    }
-
-    .profile p {
-      margin: 4px 0 0;
-      
-      color: gainsboro;
-    }
-
-    .section-title {
-      font-size: 1.25rem;
-      font-weight: 500;
-      
-      margin-bottom: 16px;
-    }
-
-    .skills, .languages {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .skill, .language {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 16px;
-      background: #F3E5F5;
-      border-radius: 50px;
-      transition: background-color 0.3s ease;
-    }
-
-    .skill:hover, .language:hover {
-      background: #E1BEE7;
-    }
-
-    .skill span, .language span {
-      font-size: 1rem;
-      
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 16px;
-    }
-
-    @media (min-width: 768px) {
-      .projects {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .project {
-      padding: 16px;
-      border: 1px solid #E0E0E0;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .project:hover {
-      border-color: rgb(var(--mdui-color-on-primary-container));
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
-
-    .project h5 {
-      margin: 0 0 8px;
-      font-size: 1.125rem;
-      font-weight: 500;
-     
-    }
-
-    .project p {
-      margin: 0;
-      font-size: 0.875rem;
-  
-    }
-
+  @keyframes hero-gradient-animation{0%{--s-start-0:9%; --s-end-0:55%; --x-0:85%; --y-0:80%; --c-0:hsla(266.99999999999983,1%,12%,1); --y-1:24%; --c-1:hsla(335.9999999999997,2%,22%,1); --x-1:60%; --s-start-1:5%; --s-end-1:72%; --c-2:hsla(53.999999999999886,0%,0%,0.49); --x-2:13%; --s-start-2:5%; --s-end-2:52%; --y-2:82%; --x-3:24%; --c-3:hsla(299,4%,36%,1); --s-start-3:13%; --s-end-3:68%; --y-3:7%;}100%{--s-start-0:9%; --s-end-0:55%; --x-0:31%; --y-0:94%; --c-0:hsla(266.99999999999943,0%,12%,1); --y-1:25%; --c-1:hsla(0,4%,19%,1); --x-1:2%; --s-start-1:5%; --s-end-1:72%; --c-2:hsla(54.000000000000036,0%,0%,0.49); --x-2:98%; --s-start-2:5%; --s-end-2:52%; --y-2:20%; --x-3:95%; --c-3:hsla(298.99999999999994,3%,41%,1); --s-start-3:13%; --s-end-3:68%; --y-3:92%;}}@property --s-start-0{syntax:'<percentage>';inherits:false;initial-value:9%}@property --s-end-0{syntax:'<percentage>';inherits:false;initial-value:55%}@property --x-0{syntax:'<percentage>';inherits:false;initial-value:85%}@property --y-0{syntax:'<percentage>';inherits:false;initial-value:80%}@property --c-0{syntax:'<color>';inherits:false;initial-value:hsla(266.99999999999983,1%,12%,1)}@property --y-1{syntax:'<percentage>';inherits:false;initial-value:24%}@property --c-1{syntax:'<color>';inherits:false;initial-value:hsla(335.9999999999997,2%,22%,1)}@property --x-1{syntax:'<percentage>';inherits:false;initial-value:60%}@property --s-start-1{syntax:'<percentage>';inherits:false;initial-value:5%}@property --s-end-1{syntax:'<percentage>';inherits:false;initial-value:72%}@property --c-2{syntax:'<color>';inherits:false;initial-value:hsla(53.999999999999886,0%,0%,0.49)}@property --x-2{syntax:'<percentage>';inherits:false;initial-value:13%}@property --s-start-2{syntax:'<percentage>';inherits:false;initial-value:5%}@property --s-end-2{syntax:'<percentage>';inherits:false;initial-value:52%}@property --y-2{syntax:'<percentage>';inherits:false;initial-value:82%}@property --x-3{syntax:'<percentage>';inherits:false;initial-value:24%}@property --c-3{syntax:'<color>';inherits:false;initial-value:hsla(299,4%,36%,1)}@property --s-start-3{syntax:'<percentage>';inherits:false;initial-value:13%}@property --s-end-3{syntax:'<percentage>';inherits:false;initial-value:68%}@property --y-3{syntax:'<percentage>';inherits:false;initial-value:7%}body{--x-0:85%;--y-0:80%;--c-0:hsla(266.99999999999983,1%,12%,1);--y-1:24%;--c-1:hsla(335.9999999999997,2%,22%,1);--x-1:60%;--c-2:hsla(53.999999999999886,0%,0%,0.49);--x-2:13%;--y-2:82%;--x-3:24%;--c-3:hsla(299,4%,36%,1);--y-3:7%;;background-color:hsla(0,0%,0%,1);background-image:radial-gradient(circle at var(--x-0) var(--y-0), var(--c-0) var(--s-start-0),transparent var(--s-end-0)),radial-gradient(circle at var(--x-1) var(--y-1), var(--c-1) var(--s-start-1),transparent var(--s-end-1)),radial-gradient(circle at var(--x-2) var(--y-2), var(--c-2) var(--s-start-2),transparent var(--s-end-2)),radial-gradient(circle at var(--x-3) var(--y-3), var(--c-3) var(--s-start-3),transparent var(--s-end-3));animation:hero-gradient-animation 10s linear infinite alternate;background-blend-mode:normal,normal,normal,normal;}
+  body{
+    font-family: 'Guton', sans-serif;
     
-    .copyright {
-      text-align: center;
-      margin-top: 16px;
-      font-size: 0.875rem;
-      
-    }
+  }
+  :root, body.light{
+   --primary: rgb(255 255 255);
+  --surface-tint: rgb(198 198 199);
+  --on-primary: rgb(47 49 49);
+  --primary-container: rgb(226 226 226);
+  --on-primary-container: rgb(99 101 101);
+  --secondary: rgb(200 198 198);
+  --on-secondary: rgb(48 48 48);
+  --secondary-container: rgb(73 73 73);
+  --on-secondary-container: rgb(185 184 184);
+  --tertiary: rgb(255 255 255);
+  --on-tertiary: rgb(47 49 49);
+  --tertiary-container: rgb(226 226 226);
+  --on-tertiary-container: rgb(99 101 101);
+  --error: rgb(255 180 171);
+  --on-error: rgb(105 0 5);
+  --error-container: rgb(147 0 10);
+  --on-error-container: rgb(255 218 214);
+  --background: rgb(20 19 19);
+  --on-background: rgb(229 226 225);
+  --surface: rgb(20 19 19);
+  --on-surface: rgb(229 226 225);
+  --surface-variant: rgb(68 71 72);
+  --on-surface-variant: rgb(196 199 200);
+  --outline: rgb(142 145 146);
+  --outline-variant: rgb(68 71 72);
+  --shadow: rgb(0 0 0);
+  --scrim: rgb(0 0 0);
+  --inverse-surface: rgb(229 226 225);
+  --inverse-on-surface: rgb(49 48 48);
+  --inverse-primary: rgb(93 95 95);
+  --primary-fixed: rgb(226 226 226);
+  --on-primary-fixed: rgb(26 28 28);
+  --primary-fixed-dim: rgb(198 198 199);
+  --on-primary-fixed-variant: rgb(69 71 71);
+  --secondary-fixed: rgb(228 226 226);
+  --on-secondary-fixed: rgb(27 28 28);
+  --secondary-fixed-dim: rgb(200 198 198);
+  --on-secondary-fixed-variant: rgb(71 71 71);
+  --tertiary-fixed: rgb(226 226 226);
+  --on-tertiary-fixed: rgb(26 28 28);
+  --tertiary-fixed-dim: rgb(198 198 199);
+  --on-tertiary-fixed-variant: rgb(69 71 71);
+  --surface-dim: rgb(20 19 19);
+  --surface-bright: rgb(58 57 57);
+  --surface-container-lowest: rgb(14 14 14);
+  --surface-container-low: rgb(28 27 27);
+  --surface-container: rgb(32 31 31);
+  --surface-container-high: rgb(42 42 42);
+  --surface-container-highest: rgb(53 52 52);
+  }
+  #smalldesc{
+    font-family: 'Guton', sans-serif;    
+    font-size:19px;    
+    margin-top: -6px;
+    font-weight:600;
+    color: white;
+  }
+   #tinydesc{
+    font-family: 'Guton', sans-serif;       
+    margin-top: 0px;
+    line-height: 18pt;
+     color:white;
+     font-size:16px;
+     
+  }
+   #hello {
+            font-family: 'Guton', sans-serif;
+            text-align: left;
+            position: relative;
+            font-size: 40px;
+            font-weight:700;
+            color:white;
+          
+        }
+
+        .text-container {
+            display: inline-block;
+            overflow: hidden;
+            vertical-align: top;
+            height: 40px;
+        }
+
+        .text-slide {
+            transition: all 0.5s ease;
+            position: relative;
+            display: block;
+        }
+
+        .leaving {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+
+        .entering {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+
+        .active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .color-change {
+            transition: color 0.5s ease;
+        }
   </style>
 </head>
-<header>
-	<mdui-top-app-bar style="position: relative; margin-left:9px; margin-right:9px;" >
-  <div style="text-align : center;">
-  <mdui-top-app-bar-title>SyntaxSpin</mdui-top-app-bar-title></div>
-  <div style="flex-grow: 1"></div>
-  <mdui-dropdown>
-  <mdui-button-icon icon="person" slot="trigger"></mdui-button-icon>
-   <mdui-menu>
-    <mdui-menu-item onClick='window.open("https://github.com/syntaxspin/","_blank");'>Github</mdui-menu-item>
-    <mdui-menu-item onClick='window.open("https://instagram.com/syntaxspin","_blank");'>Instagram</mdui-menu-item>
-	  <mdui-menu-item onClick='window.open("https://bsky.app/profile/syntaxspin.bsky.social","_blank");'>Bluesky</mdui-menu-item>
-	   <mdui-menu-item onClick='window.open("https://reddit.com/u/syntaxspin","_blank");'>Reddit</mdui-menu-item>
-  </mdui-menu>
-</mdui-dropdown>
-</mdui-top-app-bar>
-</header>
+
 <body>
-  <div class="containers">
-  <div class="container">
-    <!-- Developer Profile -->
-    <mdui-card variant="outlined" style=" border: 1px solid; border-radius:40px; padding: 20px;"class="profile">
-      <img src="https://github.com/syntaxspin.png" alt="Developer">
-      <div>
-        <h3>SyntaxSpin</h3>
-        <p>Developer & Designer</p>
-      </div>
-    </mdui-card>
+<header class="fixed" style="background-color:rgba(0,0,0,0); backdrop-filter:blur(9px); padding-left:22px; padding-right:22px;">
+  <nav>
+   <h5 class="max left-align" style="color: white; font-weight:600; font-size:19px;">SyntaxSpin</h5>
+    <button class="circle transparent" onClick="document.querySelector('#dialog').show()">
+      <i style="color:white;">menu</i>
+    </button>
+  </nav>
+  
+</header>
+  <dialog class="top" style="background-color:rgba(0,0,0,0.4); backdrop-filter:blur(8px);" id="dialog">
+ <nav class="drawer" style="color:white;">
+  <header>
+    <nav class="right-align">
+      <button class="circle transparent right" onClick="document.querySelector('#dialog').close();"><i>close</i></button>
+    </nav>
+  </header>
+  <a onClick="scrollToAbout();">
+    <i>info</i>
+    <span>About SyntaxSpin</span>
+  </a>
+  <a>
+    <i>draft</i>
+    <span>Projects</span>
+  </a>
+  <a>
+    <i>person</i>
+    <span>Contact</span>
+  </a>
+</nav>
+  <script>
+    function scrollToAbout() {
+      const aboutSection = document.getElementById('about');
+      aboutSection.scrollIntoView({ behavior: 'smooth' });
+      document.querySelector('#dialog').close();
+    }
+  </script>
+</dialog>
+  
+  <div>
+<main class="responsive" style="padding:22px">
+  <section id="home">
+  <img src="https://github.com/syntaxspin.png" width="60px" height="60px" style="border-radius:100%;">
+ <h1 id="hello" style="margin-top:15px;">
+        <span id="greeting" style="margin-bottom : -12px"></span><br>
+   <div style="margin-top : -13px;"> <span id="name" class="color-change">Ilyasse</span>
+        <span id="dot" class="color-change">.</span></div>
+    </h1>
+    <script>
+        const greetings = [
+            { text: "Hello I am\n ", lang: 'english' },
+            { text: "Holá soy \n ", lang: 'spanish' },
+            { text: "Bonjour je suis \n ", lang: 'french' },
+            { text: "Olá sou\n ", lang: 'portuguese' },
+            { text: "Halo saya \n ", lang: 'indonesian' }
+        ];
 
-    <!-- Skills Section -->
-    <div>
-      <h4 class="section-title">Skills</h4>
-      <div class="skills">
-        <mdui-chip outlined >Java</mdui-chip>
-	   	<mdui-chip outlined >Kotlin</mdui-chip>
-		   <mdui-chip outlined >CSS3</mdui-chip>
-		   <mdui-chip outlined >HTML5</mdui-chip>
-		 <mdui-chip outlined >JavaScript</mdui-chip>
-		 <mdui-chip outlined >Markdown</mdui-chip>
-		 <mdui-chip outlined >Git</mdui-chip>
-		 <mdui-chip outlined >Batch</mdui-chip>
-       
-      </div>
-    </div>
+        let currentIndex = 0;
+        const greetingElement = document.getElementById('greeting');
+        const nameElement = document.getElementById('name');
+        const dotElement = document.getElementById('dot');
 
-    <!-- Language Section -->
-    <div>
-      <h4 class="section-title">Languages</h4>
-      <div class="languages">
-	   <mdui-chip outlined >🇹🇳 Arabic </mdui-chip>
-	    <mdui-chip outlined >🇺🇸 English</mdui-chip>
-		 <mdui-chip outlined >🇫🇷 French</mdui-chip>
-		  <mdui-chip outlined >🇪🇸 Spanish</mdui-chip>
-       
-      </div>
-    </div>
+        function getRandomColor() {
+        // Generate vibrant colors with high saturation and controlled lightness
+        return 'hsl(' + 
+            Math.random() * 360 + ', ' + // Random hue (0-360)
+            '100%, ' +                   // Full saturation
+            '70%)';                     // 70% lightness (bright)
+    }
 
-    <!-- Projects Section -->
-    <div>
-      <h4 class="section-title">Projects</h4>
-      <div class="projects">
-        <div class="project" onClick='window.open("https://github.com/sparkleddevs/sparkleseditor","_blank");'>
-          <h5>Sparkles Editor</h5>
-          <p>Advanced code editor</p>
-        </div>
-        <div class="project" onClick='window.open("https://syntaxspin.github.io","_blank");'>
-          <h5>Robok Engine (Contributor) - Closed Source</h5>
-          <p>Game development framework</p>
-        </div>
-        <div class="project" onClick='window.open("https://github.com/syntaxspin/ffmpegplayground","_blank");'>
-          <h5>FFmpeg Playground</h5>
-          <p>Media processing toolkit</p>
-        </div>
-        <div class="project" onClick='window.open("https://github.com/syntaxspin/sakura","_blank");'>
-          <h5>Sakura</h5>
-          <p>Jetpack Compose Learner</p>
-        </div>
-      </div>
-    </div>
-
-    
- 
- 
- 
-
-    <!-- Copyright -->
-    <div style="margin-top:49px;" class="copyright">
-      &copy; 2025 SyntaxSpin. All rights reserved. Made by <a herf="https://github.com/nexavo999">Nexavo</a> and adapted by SyntaxSpin
-    </div>
+    // Rest of the code remains the same
+    function updateContent() {
+        greetingElement.textContent = greetings[currentIndex].text;
+        const newColor = getRandomColor();
+        nameElement.style.color = newColor;
+        dotElement.style.color = newColor;
+        currentIndex = (currentIndex + 1) % greetings.length;
+    }
+        // Initial call
+        updateContent();
+        
+        // Update every 3 seconds
+        setInterval(updateContent, 3000);
+    </script>
+   <h4 id="smalldesc">A developer and designer</h3>
+  <p id="tinydesc">Ilyasse (aka syntaxspin) is 19 years old from tunisia who loves programming see more about him below</p>
+<button style="background-color :white; color:black; font-family: 'Guton', sans-serif; margin-left:-1px;" variant="filled" onclick="window.open('https://github.com/syntaxspin','_blank');">Github</button>
+<button style="color:white; font-family: 'Guton', sans-serif; background-color:transparent; margin-left:-3px;" >About me</button>
+<!--<button class="circle transparent right" ></button><img  src="icons/instagram.svg"/> </button>
+   --> <div style="text-align:center;">
+    <dotlottie-player style="text-align : center;" src="https://lottie.host/96b7a336-e362-4f86-b283-a0e06cd15cb4/oIQQSCwE4e.lottie" background="transparent" speed="1" style="width: 100px; height: 100px" loop autoplay></dotlottie-player>
+  </div> 
+  <section id="about" style="text-align:center;">
+   <h1 style="font-size:30px; font-weight:700;">About SyntaxSpin</h1> 
+    <p style="text-align:left;">SyntaxSpin joined Telegram on October 2020 , he started as  <span style="text-decoration: underline; cursor: pointer;" onclick="window.location.href='https://sketchware.pro';">SketchwarePro</span> then he started studying some other programming languages like HTML CSS Python and in 2024 he merged to try android development  <span style="text-decoration: underline; cursor: pointer;" onclick="window.location.href='https://androidide.com';">AndroidIDE</span> SyntaxSpin is currently working on projects that has Android or Web you can see them below</p>
+    <nav>
+  <div class="center-align">
+    <button class="circle medium">
+      2020
+    </button>
+    <div class="small-margin">SketchwarePro</div>
   </div>
-</div>
+  <hr class="max">
+  <div class="center-align">
+    <button class="circle medium">2022</button>
+    <div class="small-margin">Web/Python</div>
+  </div>
+</nav>
+   <nav>
+  <div class="center-align">
+    <button class="circle medium">
+      2024
+    </button>
+    <div class="small-margin">AndroidDev</div>
+  </div>
+  <hr class="max">
+  <div class="center-align">
+    <button class="circle medium">2025</button>
+    <div class="small-margin">Jetpack/React</div>
+  </div>
+</nav>
+   <h2 style="font-size:30px; font-weight:700; margin-bottom:15px;">Programming Languages</h2>
+    <button style="padding:-5px;" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=java" />
+    </button>
+    <button style="padding:-5px;" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=androidstudio" />
+    </button>
+    <button style="padding:-5px;" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=python" />
+    </button>
+    <button style="padding:-5px;" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=html" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=css" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=c" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=kotlin" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=materialui" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=bash" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=md" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=qt" />
+    </button>
+    <button style="padding:-5px; margin-top:15px" class="border square round extra" style="min-width:50px">
+      <img  class="responsive big" src="https://skillicons.dev/icons?i=git" />
+    </button>
+    
+    
+   <div class="center-align margin-top:10px: ">
+         <dotlottie-player class="center"
+  src="https://lottie.host/2aa81388-4b6f-4f77-bdcc-18173faec23f/0OQ1XU29GG.lottie"
+  background="transparent"
+  speed="1"
+  style="width: 100px; height: 100px"
+  loop
+  autoplay
+></dotlottie-player>
+   </div>
+    <h2 style=" font-size:30px; font-weight:700; margin-bottom:15px;">Spoken Languages</h2>
+    <button class="chip">Arabic</button>
+    <button class="chip">English</button>
+    <button class="chip">French</button>
+    <button class="chip" style="margin-top: 16px; ">Indonesian</button>
+    <button class="chip" style="margin-top: 16px; ">Portuguese (soon)</button>
+    <button class="chip" style="margin-top: 16px; ">Spanish</button>
+  </section> 
+  <section>
 
+
+
+  </section>  
+</main>
+  </div>
 </body>
 </html>
